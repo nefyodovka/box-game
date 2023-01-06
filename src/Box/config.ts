@@ -1,29 +1,29 @@
 import { PositionType } from "./types";
 
 export enum BlocksEnum {
-  regular = "regular",
-  red = "red",
-  blue = "blue",
-  green = "green"
+  Regular = "regular",
+  Red = "red",
+  Blue = "blue",
+  Green = "green"
 }
 
 export const blocksImages: Record<BlocksEnum, string> = {
-  [BlocksEnum.regular]: require("./img/block-regular.png"),
-  [BlocksEnum.red]: require("./img/block-red.png"),
-  [BlocksEnum.blue]: require("./img/block-blue.png"),
-  [BlocksEnum.green]: require("./img/block-green.png")
+  [BlocksEnum.Regular]: require("./img/block-regular.png").default,
+  [BlocksEnum.Red]: require("./img/block-red.png").default,
+  [BlocksEnum.Blue]: require("./img/block-blue.png").default,
+  [BlocksEnum.Green]: require("./img/block-green.png").default
 };
 
 export enum CorrectEnum {
-  red = "1",
-  blue = "9",
-  green = "7"
+  Red = "1",
+  Blue = "9",
+  Green = "7"
 }
 
 export const correctIndexes: Record<CorrectEnum, BlocksEnum> = {
-  [CorrectEnum.red]: BlocksEnum.red,
-  [CorrectEnum.blue]: BlocksEnum.blue,
-  [CorrectEnum.green]: BlocksEnum.green
+  [CorrectEnum.Red]: BlocksEnum.Red,
+  [CorrectEnum.Blue]: BlocksEnum.Blue,
+  [CorrectEnum.Green]: BlocksEnum.Green
 };
 
 export const blocksPositions: PositionType[] = [
@@ -42,15 +42,15 @@ export const blocksPositions: PositionType[] = [
 ];
 
 export enum RotationsEnum {
-  topLeft = "4",
-  topRight = "5",
-  bottom = "8"
+  TopLeft = "4",
+  TopRight = "5",
+  Bottom = "8"
 }
 
 export const rotations: Record<RotationsEnum, number[]> = {
-  [RotationsEnum.topLeft]: [0, 1, 5, 8, 7, 3],
-  [RotationsEnum.topRight]: [1, 2, 6, 9, 8, 4],
-  [RotationsEnum.bottom]: [4, 5, 9, 11, 10, 7]
+  [RotationsEnum.TopLeft]: [0, 1, 5, 8, 7, 3],
+  [RotationsEnum.TopRight]: [1, 2, 6, 9, 8, 4],
+  [RotationsEnum.Bottom]: [4, 5, 9, 11, 10, 7]
 };
 
 export const BLOCK_RADIUS = 3.6;

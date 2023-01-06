@@ -1,15 +1,15 @@
 import { Howl, HowlOptions } from "howler";
 
 export enum AudioEnum {
-  boxRotate,
-  boxOpened
+  BoxRotate,
+  BoxOpened
 }
 
 export const AUDIOS: Record<AudioEnum, HowlOptions> = {
-  [AudioEnum.boxRotate]: {
+  [AudioEnum.BoxRotate]: {
     src: require("./sounds/box-rotate.mp3")
   },
-  [AudioEnum.boxOpened]: {
+  [AudioEnum.BoxOpened]: {
     src: require("./sounds/box-opened.mp3")
   }
 };

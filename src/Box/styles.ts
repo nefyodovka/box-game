@@ -11,6 +11,8 @@ import {
 import { PositionType } from "./types";
 import { BlocksEnum } from "./config";
 
+import Popup from 'reactjs-popup';
+
 export const generatePositionStyle = (position: PositionType) => ({
   top: position[0] + "rem",
   left: position[1] + "rem"
@@ -23,7 +25,7 @@ export const generateCicleStyle = (radius: number) => ({
 });
 
 export const BoxWrapper = styled.div`
-  background: url(${require("./img/box.jpg")}) no-repeat center / contain;
+  background: url(${require("./img/box.jpg").default}) no-repeat center / contain;
   width: 69.7rem;
   height: 49rem;
   position: absolute;
@@ -41,8 +43,8 @@ const rotationCircleMixin = css`
 `;
 
 export const RotationCircleWrapper = styled.div<{
-  $rotate: boolean;
-  isCorrect: boolean;
+  $rotate: boolean,
+  isCorrect: boolean
 }>`
   position: absolute;
   opacity: 0;
@@ -90,14 +92,16 @@ const rotationBlockMixin = css`
   transform: rotate(-${ROTATION_ANGLE}deg);
 `;
 
-export const BlockImg = styled.div<{
+interface IBlockImg {
   type: BlocksEnum;
   isRotation?: boolean;
   $rotate?: boolean;
   isHide?: boolean;
   isCorrect?: boolean;
   withRotationCircle?: boolean;
-}>`
+}
+
+export const BlockImg = styled.div<IBlockImg>`
   background: url(${(props) => blocksImages[props.type]}) no-repeat center /
     contain;
   position: absolute;
@@ -119,14 +123,16 @@ export const BlockImg = styled.div<{
 
 export const Success = styled.div`
   position: absolute;
+  height: 100%;
   width: 100%;
   text-align: center;
-  top: 1rem;
+  //top: 1rem;
   font-size: 2rem;
   background: black;
   color: olivedrab;
   font-family: monospace;
   text-align: center;
+  z-index: 1000;
 `;
 
 export const Shuffle = styled.button`
@@ -136,4 +142,15 @@ export const Shuffle = styled.button`
   font-size: 1rem;
   user-select: none;
   cursor: pointer;
+`;
+
+export const StyledPopup = styled(Popup)`
+  // use your custom style for ".popup-overlay"
+  &-overlay {
+
+  }
+  // use your custom style for ".popup-content"
+  &-content {
+
+  }
 `;

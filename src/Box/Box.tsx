@@ -7,20 +7,24 @@ import { blocksPositions } from "./config";
 import { BoxStore, BoxGameContext } from "./store";
 import { AudioEnum } from "../audio";
 
+import 'reactjs-popup/dist/index.css';
+
 type Props = {
-  onSuccess?(): void;
+  onSuccess?: void;
 };
 
 const Box: React.FC<Props> = ({ onSuccess }: Props) => {
   const [store] = React.useState(() => new BoxStore());
 
+
+
   React.useEffect(() => {
-    store.audioController.preload([AudioEnum.boxOpened, AudioEnum.boxRotate]);
+    store.audioController.preload([AudioEnum.BoxOpened, AudioEnum.BoxRotate]);
   }, []);
 
   React.useEffect(() => {
     if (store.isCorrect) {
-      store.audioController.play(AudioEnum.boxOpened);
+      store.audioController.play(AudioEnum.BoxOpened);
     }
   }, [store.isCorrect]);
 
@@ -31,9 +35,9 @@ const Box: React.FC<Props> = ({ onSuccess }: Props) => {
           <Block position={position} index={i} type={store.blocks[i]} key={i} />
         ))}
         {store.isCorrect ? (
-          <Success>Try not. Do, or do not. There is no try.</Success>
+          <Success>Слегкимпаром</Success>
         ) : (
-          <Shuffle onClick={store.shuffle}>Shuffle</Shuffle>
+          <Shuffle onClick={store.shuffle}>Сбросить</Shuffle>
         )}
       </BoxWrapper>
     </BoxGameContext.Provider>

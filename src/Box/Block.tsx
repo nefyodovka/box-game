@@ -32,7 +32,7 @@ const Block: React.FC<Props> = ({ position, type, index }: Props) => {
       return;
     }
     store.setAnimation(true, index);
-    store.audioController.play(AudioEnum.boxRotate);
+    store.audioController.play(AudioEnum.BoxRotate);
     setTimeout(rotateIndex, ANIMATION_TIME);
   };
 

@@ -1,1 +1,5 @@
 node_modules
+build
+dist
+package-lock.json
+src/react-app-env.d.ts

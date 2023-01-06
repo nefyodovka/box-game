@@ -31,10 +31,10 @@ export class BoxStore {
 
   shuffle(): void {
     this.blocks = [
-      ...new Array(9).fill(BlocksEnum.regular),
-      BlocksEnum.red,
-      BlocksEnum.blue,
-      BlocksEnum.green
+      ...new Array(9).fill(BlocksEnum.Regular),
+      BlocksEnum.Red,
+      BlocksEnum.Blue,
+      BlocksEnum.Green
     ].sort(() => Math.random() - 0.5);
 
     if (this.isReshuffle) {
@@ -58,11 +58,11 @@ export class BoxStore {
 
   get isCorrectAtRotateBlock(): boolean {
     const rotationsIndexes = [
-      RotationsEnum.topLeft,
-      RotationsEnum.topRight,
-      RotationsEnum.bottom
+      RotationsEnum.TopLeft,
+      RotationsEnum.TopRight,
+      RotationsEnum.Bottom
     ];
-    const correctTypes = [BlocksEnum.red, BlocksEnum.blue, BlocksEnum.green];
+    const correctTypes = [BlocksEnum.Red, BlocksEnum.Blue, BlocksEnum.Green];
 
     return rotationsIndexes.some((index) => {
       return correctTypes.some((type) => this.blocks[index] === type);
