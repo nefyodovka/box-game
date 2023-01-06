@@ -34,7 +34,7 @@ const Box: React.FC<Props> = ({ onSuccess }: Props) => {
           <Block position={position} index={i} type={store.blocks[i]} key={i} />
         ))}
         {store.isCorrect ? (
-          <Success>Слегкимпаром</Success>
+          <Success><h2>Слегкимпаром</h2></Success>
         ) : (
           <Shuffle onClick={store.shuffle}>Сбросить</Shuffle>
         )}
