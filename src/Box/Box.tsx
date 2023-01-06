@@ -34,7 +34,7 @@ const Box: React.FC<Props> = ({ onSuccess }: Props) => {
           <Block position={position} index={i} type={store.blocks[i]} key={i} />
         ))}
         {store.isCorrect ? (
-          <Success><h2>Код: моцк46</h2></Success>
+          <Success><h2>Вам нужен каток в парке Жеруык на Бауыржана Момышулы. Код написан на урне слева от проката коньков</h2></Success>
         ) : (
           <Shuffle onClick={store.shuffle}>Сбросить</Shuffle>
         )}
