@@ -11,8 +11,6 @@ import {
 import { PositionType } from "./types";
 import { BlocksEnum } from "./config";
 
-import Popup from 'reactjs-popup';
-
 export const generatePositionStyle = (position: PositionType) => ({
   top: position[0] + "rem",
   left: position[1] + "rem"
@@ -142,15 +140,4 @@ export const Shuffle = styled.button`
   font-size: 1rem;
   user-select: none;
   cursor: pointer;
-`;
-
-export const StyledPopup = styled(Popup)`
-  // use your custom style for ".popup-overlay"
-  &-overlay {
-
-  }
-  // use your custom style for ".popup-content"
-  &-content {
-
-  }
 `;

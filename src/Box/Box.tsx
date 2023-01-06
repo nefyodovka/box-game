@@ -7,7 +7,6 @@ import { blocksPositions } from "./config";
 import { BoxStore, BoxGameContext } from "./store";
 import { AudioEnum } from "../audio";
 
-import 'reactjs-popup/dist/index.css';
 
 type Props = {
   onSuccess?: void;
