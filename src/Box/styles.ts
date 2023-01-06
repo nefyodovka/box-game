@@ -124,7 +124,7 @@ export const Success = styled.div`
   height: 100%;
   width: 100%;
   text-align: center;
-  top: 1rem;
+  top: 300px;
   font-size: 2rem;
   background: black;
   color: olivedrab;
