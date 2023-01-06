@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/nefyodovka/box-game/issues"
   },
-  "homepage": "."
+  "homepage": ".",
+  "engines": {
+    "node": "16.9.1"
+  }
 }
